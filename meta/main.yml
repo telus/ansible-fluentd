@@ -1,0 +1,5 @@
+---
+dependencies:
+  - role: meta/repository
+    repository_key: '0x1093db45a12e206f'
+    repository_url: 'deb [arch=amd64] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib'

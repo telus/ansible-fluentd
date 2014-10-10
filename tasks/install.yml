@@ -1,0 +1,11 @@
+---
+- name: Install Packages | apt
+  apt:
+    state: latest
+    pkg: "{{ item }}"
+  with_items:
+    - td-agent
+  tags:
+    - sofware-installation
+    - using-apt
+    - fluentd
