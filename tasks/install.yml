@@ -6,6 +6,6 @@
   with_items:
     - td-agent
   tags:
-    - sofware-installation
+    - software-installation
     - using-apt
     - fluentd
