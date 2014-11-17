@@ -9,3 +9,15 @@
     - software-installation
     - using-apt
     - fluentd
+
+- name: Install Packages | gem
+  gem:
+    state: latest
+    name: "fluent-plugin-{{ item }}"
+    user_install: no
+  with_items: fluentd_plugins
+  when: fluentd_plugins is iterable
+  tags:
+    - software-installation
+    - using-gem
+    - fluentd
