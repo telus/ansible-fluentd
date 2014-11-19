@@ -10,6 +10,16 @@
     - using-apt
     - fluentd
 
+- name: Install Packages | apt | libcurl4-openssl-dev
+  apt:
+    state: latest
+    pkg: libcurl4-openssl-dev
+  when: "'elasticsearch' in apt_packages"
+  tags:
+    - software-installation
+    - using-apt
+    - fluentd-plugin-elasticsearch
+
 - name: Install Packages | gem
   gem:
     state: latest
