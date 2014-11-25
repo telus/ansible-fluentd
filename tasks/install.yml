@@ -14,7 +14,7 @@
   apt:
     state: latest
     pkg: libcurl4-openssl-dev
-  when: "'elasticsearch' in apt_packages"
+  when: "'elasticsearch' in fluentd_plugins"
   tags:
     - software-installation
     - using-apt

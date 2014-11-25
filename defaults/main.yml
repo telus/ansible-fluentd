@@ -1,4 +1,5 @@
 ---
+fluentd_config_include_path: /etc/td-agent/conf.d
 fluentd_plugins: no
 fluentd_elasticsearch_host: "logs.data-{{ environment_tier }}.teluswebteam.com"
 fluentd_influx_host: "metrics.data-{{ environment_tier }}.teluswebteam.com"

@@ -1,5 +1,5 @@
 ---
-- name: "Upload Config | fluentd"
+- name: Upload Config | fluentd
   template:
     src: "{{ item }}"
     dest: "/{{ item }}"
@@ -8,3 +8,15 @@
     mode: 0664
   with_items:
     - etc/td-agent/td-agent.conf
+
+- name: "Directory Exists | {{ fluentd_config_include_path }}"
+  file:
+    state: directory
+    path: "{{ fluentd_config_include_path }}"
+    owner: root
+    group: wcadmin
+    mode: 775
+  tags:
+    - directory-structure
+    - configuration
+    - ansible
