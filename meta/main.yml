@@ -3,3 +3,8 @@ dependencies:
   - role: meta/repository
     repository_key: '0x1093db45a12e206f'
     repository_url: 'deb [arch=amd64] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib'
+  - role: meta/monitor
+    monitor_name: fluentd
+    monitor_pidfile: /var/run/td-agent/td-agent.pid
+    monitor_start_command: /usr/sbin/service td-agent start
+    monitor_stop_command: /usr/sbin/service td-agent stop
