@@ -8,6 +8,7 @@
     mode: 0664
   with_items:
     - etc/td-agent/td-agent.conf
+  notify: Reload Service | fluentd
 
 - name: "Directory Exists | {{ fluentd_config_include_path }}"
   file:
