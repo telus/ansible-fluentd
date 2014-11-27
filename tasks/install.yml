@@ -1,15 +1,4 @@
 ---
-- name: Install Packages | apt
-  apt:
-    state: latest
-    pkg: "{{ item }}"
-  with_items:
-    - td-agent
-  tags:
-    - software-installation
-    - using-apt
-    - fluentd
-
 - name: Install Packages | apt | libcurl4-openssl-dev
   apt:
     state: latest
@@ -31,3 +20,4 @@
     - software-installation
     - using-gem
     - fluentd
+

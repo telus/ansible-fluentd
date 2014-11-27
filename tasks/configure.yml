@@ -1,23 +1,26 @@
 ---
-- name: Upload Config | fluentd
-  template:
-    src: "{{ item }}"
-    dest: "/{{ item }}"
-    owner: root
-    group: wcadmin
-    mode: 0664
-  with_items:
-    - etc/td-agent/td-agent.conf
-  notify: Reload Service | fluentd
+# TODO: install jemalloc by default
 
-- name: "Directory Exists | {{ fluentd_config_include_path }}"
+- name: Directory Exists | fluentd config roots
   file:
     state: directory
-    path: "{{ fluentd_config_include_path }}"
+    path: "{{ item }}"
     owner: root
     group: wcadmin
     mode: 775
+  with_items:
+    - "{{ fluentd_config_root }}"
+    - "{{ fluentd_config_include_root }}"
   tags:
     - directory-structure
     - configuration
     - ansible
+
+- name: "Upload Config | {{ fluentd_config_path }}"
+  template:
+    src: usr/local/etc/fluentd/fluentd.conf
+    dest: "{{ fluentd_config_path }}"
+    owner: root
+    group: wcadmin
+    mode: 0664
+  notify: Reload Service | fluentd

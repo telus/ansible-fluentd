@@ -3,8 +3,13 @@ dependencies:
   - role: meta/repository
     repository_key: '0x1093db45a12e206f'
     repository_url: 'deb [arch=amd64] http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib'
+  - role: package/ruby
+    ruby_gems:
+      - fluentd
+  - role: package/upstart
+    upstart_name: fluentd
+    upstart_description: fluentd
+    upstart_exec: "/usr/local/bin/fluentd --config {{ fluentd_config_path }}"
+    upstart_file_descriptor_limit: 65536
   - role: meta/monitor
     monitor_name: fluentd
-    monitor_pidfile: /var/run/td-agent/td-agent.pid
-    monitor_start_command: /usr/sbin/service td-agent start
-    monitor_stop_command: /usr/sbin/service td-agent stop
