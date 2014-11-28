@@ -9,7 +9,9 @@ dependencies:
   - role: package/upstart
     upstart_name: fluentd
     upstart_description: fluentd
-    upstart_exec: "/usr/local/bin/fluentd -- --config {{ fluentd_config_path }}"
+    upstart_exec_path: "/usr/local/bin/fluentd"
+    upstart_exec_flags:
+      - "--config {{ fluentd_config_path }}"
     upstart_file_descriptor_limit: 65536
   - role: meta/monitor
     monitor_name: fluentd
