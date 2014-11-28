@@ -1,6 +1,4 @@
 ---
-# TODO: install jemalloc by default
-
 - name: Directory Exists | fluentd config roots
   file:
     state: directory

@@ -1,4 +1,13 @@
 ---
+- name: Install Packages | apt | libjemalloc1
+  apt:
+    state: latest
+    pkg: libjemalloc1
+  tags:
+    - software-installation
+    - using-apt
+    - jemalloc
+
 - name: Install Packages | apt | libcurl4-openssl-dev
   apt:
     state: latest
