@@ -16,11 +16,21 @@
     - configuration
     - ansible
 
-- name: "Upload Config | {{ fluentd_config_path }}"
+- name: "Upload Config | endpoint config"
   template:
     src: usr/local/etc/fluentd/fluentd.conf
     dest: "{{ fluentd_config_path }}"
     owner: root
     group: wcadmin
     mode: 0664
+  notify: Reload Service | fluentd
+
+- name: "Upload Config | sources config"
+  template:
+    src: usr/local/etc/fluentd/conf.d/sources.conf
+    dest: "{{ fluentd_config_include_root }}/sources.conf"
+    owner: root
+    group: wcadmin
+    mode: 0664
+  when: sources is iterable
   notify: Reload Service | fluentd

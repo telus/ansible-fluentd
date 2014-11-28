@@ -3,6 +3,8 @@ fluentd_config_root: /usr/local/etc/fluentd
 fluentd_config_path: "{{ fluentd_config_root }}/fluentd.conf"
 fluentd_config_include_root: "{{ fluentd_config_root }}/conf.d"
 
+sources: no
+
 fluentd_plugins: no
 fluentd_elasticsearch_host: "logs.data-{{ environment_tier }}.teluswebteam.com"
 fluentd_influxdb_host: "metrics.data-{{ environment_tier }}.teluswebteam.com"
