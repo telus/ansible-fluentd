@@ -6,6 +6,7 @@ dependencies:
   - role: package/ruby
     ruby_gems:
       - fluentd
+      - fluent-plugin-record-reformer
   - role: package/upstart
     upstart_name: fluentd
     upstart_description: fluentd
