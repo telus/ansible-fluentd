@@ -30,5 +30,5 @@
     owner: root
     group: wcadmin
     mode: 0664
-  when: sources is iterable
+  when: fluentd_sources is iterable
   notify: Reload Service | fluentd

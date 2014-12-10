@@ -7,6 +7,7 @@
     - software-installation
     - using-apt
     - jemalloc
+    - build-dependency
 
 - name: Install Packages | apt | libcurl4-openssl-dev
   apt:
@@ -17,6 +18,7 @@
     - software-installation
     - using-apt
     - fluentd-plugin-elasticsearch
+    - build-dependency
 
 - name: Install Packages | gem
   gem:
