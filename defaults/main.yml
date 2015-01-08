@@ -2,7 +2,7 @@
 fluentd_config_root: /usr/local/etc/fluentd
 fluentd_config_path: "{{ fluentd_config_root }}/fluentd.conf"
 fluentd_config_include_root: "{{ fluentd_config_root }}/conf.d"
-fluentd_config_pos_file_root: "{{ fluentd_config_root }}/pos"
+fluentd_posfile_path: "{{ fluentd_config_root }}/pos"
 
 fluentd_sources: []
 

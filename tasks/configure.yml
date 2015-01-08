@@ -9,7 +9,7 @@
   with_items:
     - "{{ fluentd_config_root }}"
     - "{{ fluentd_config_include_root }}"
-    - "{{ fluentd_config_pos_file_root }}"
+    - "{{ fluentd_posfile_path }}"
   tags:
     - directory-structure
     - configuration
