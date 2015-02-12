@@ -7,6 +7,7 @@
     group: wcadmin
     mode: 775
   with_items:
+    - "{{ fluentd_runtime_root }}"
     - "{{ fluentd_config_root }}"
     - "{{ fluentd_config_include_root }}"
     - "{{ fluentd_posfile_path }}"
