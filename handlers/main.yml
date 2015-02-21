@@ -1,8 +1,7 @@
 ---
 - name: Reload Service | fluentd
-  monit:
-    state: restarted
+  service:
+    state: reloaded
     name: fluentd
   tags:
-    - using-monit
     - disruptive
