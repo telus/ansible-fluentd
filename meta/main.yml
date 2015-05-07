@@ -11,5 +11,3 @@ dependencies:
     upstart_exec_flags:
       - "--config {{ fluentd_config_path }}"
     upstart_file_descriptor_limit: 65536
-  - role: meta/monitor
-    monitor_name: fluentd
