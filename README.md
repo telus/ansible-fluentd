@@ -13,7 +13,7 @@
 - `fluentd_posfile_path` (string) - Where Fluentd stores its position placeholder files.
 - `fluentd_posfile_path` (string) - Where Fluentd stores its position placeholder files.
 - `fluentd_sources` (array) - A list of sources (see example) for Fluentd to read from.
-- `fluentd_plugins` (array) - A list of required 'fluent-plugin-pluginname' gems
+- `fluentd_plugins` (array) - A list of required 'fluent-plugin-pluginname' gems.
 - `fluentd_elasticsearch_host` (string) - Where Fluentd sends data for Elasticsearch.
 - `fluentd_influxdb_host` (string) - Where Fluentd sends data for InfluxDB.
 
