@@ -1,10 +1,20 @@
 ---
+galaxy_info:
+  author: "Justin Scott"
+  description: "Really simple management of data collection from logs or scripts. Installation from gem."
+  license: "Apache License, Version 2.0"
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "trusty"
+  categories:
+    - "monitoring"
 dependencies:
-  - role: package/ruby
+  - role: telusdigital.ruby
     ruby_gems:
       - fluentd
       - fluent-plugin-record-reformer
-  - role: package/upstart
+  - role: telusdigital.upstart
     upstart_name: fluentd
     upstart_description: fluentd
     upstart_exec_path: "/usr/local/bin/fluentd"
