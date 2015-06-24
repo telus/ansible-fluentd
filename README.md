@@ -26,6 +26,7 @@
 - hosts: servers
   roles:
     - role: telusdigital.fluentd
+      fluentd_config_name: php
       fluentd_sources:
         - path: "/data/log/php.log"
           format: '^\[(?<date_time>(?<date>[^ ]*) (?<time>[^]]*)[^]]*)\] (?<notice>\w+): (?<message>.*)'
