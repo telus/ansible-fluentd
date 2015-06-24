@@ -21,7 +21,7 @@
     port 9200
     index_name {{ project }}
     type_name nginx_error
-	</store>
+  </store>
 </match>
 {% endif %}
 
