@@ -1,0 +1,35 @@
+{% if 'elasticsearch' in fluentd_plugins %}
+<match reformed.elasticsearch.nginx.access>
+  type copy
+  <store>
+    type elasticsearch
+    host {{ fluentd_elasticsearch_host }}
+    port 9200
+    index_name {{ project }}
+    type_name nginx_access
+  </store>
+  <store>
+    type stdout
+  </store>
+</match>
+
+<match reformed.elasticsearch.nginx.error>
+  type copy
+  <store>
+    type elasticsearch
+    host {{ fluentd_elasticsearch_host }}
+    port 9200
+    index_name {{ project }}
+    type_name nginx_error
+	</store>
+</match>
+{% endif %}
+
+
+
+{% if 'influxdb' in fluentd_plugins %}
+<match reformed.influxdb.**>
+  type influxdb
+  host {{ fluentd_influxdb_host }}
+</match>
+{% endif %}
