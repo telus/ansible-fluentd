@@ -3,8 +3,8 @@
   file:
     state: directory
     path: "{{ item }}"
-    owner: root
-    group: wcadmin
+    owner: "{{ fluentd_user }}"
+    group: "{{ fluentd_group }}"
     mode: 775
   with_items:
     - "{{ fluentd_runtime_root }}"
@@ -22,8 +22,8 @@
   template:
     src: usr/local/etc/fluentd/fluentd.conf
     dest: "{{ fluentd_config_path }}"
-    owner: root
-    group: wcadmin
+    owner: "{{ fluentd_user }}"
+    group: "{{ fluentd_group }}"
     mode: 0664
   notify: Reload Service | fluentd
 
@@ -31,8 +31,8 @@
   template:
     src: usr/local/etc/fluentd/conf.d/sources.conf.template
     dest: "{{ fluentd_config_include_root }}/{{ fluentd_config_name }}.conf"
-    owner: root
-    group: wcadmin
+    owner: "{{ fluentd_user }}"
+    group: "{{ fluentd_group }}"
     mode: 0664
   when: fluentd_sources is iterable
   notify: Reload Service | fluentd
@@ -41,8 +41,8 @@
   template:
     src: usr/local/etc/fluentd/plugins.d/plugins.conf.template
     dest: "{{ fluentd_plugins_include_root }}/{{ item }}.conf"
-    owner: root
-    group: wcadmin
+    owner: "{{ fluentd_user }}"
+    group: "{{ fluentd_group }}"
     mode: 0664
   when: fluentd_sources is iterable
   notify: Reload Service | fluentd

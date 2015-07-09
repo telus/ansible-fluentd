@@ -8,6 +8,9 @@ fluentd_config_include_root: "{{ fluentd_config_root }}/conf.d"
 fluentd_plugins_include_root: "{{ fluentd_config_root }}/plugins.d"
 fluentd_posfile_path: "{{ fluentd_config_root }}/pos"
 
+fluentd_user: root
+fluentd_group: staff
+
 fluentd_sources: []
 
 fluentd_plugins: []
