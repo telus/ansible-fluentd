@@ -5,11 +5,12 @@
     type elasticsearch
     host {{ fluentd_elasticsearch_host }}
     port 9200
+    {% if environment_tier in ['production', 'staging'] %}
+    user {{ elasticsearch_user }}
+    password {{ elasticsearch_password }}
+    {% endif %}
     index_name {{ project }}
     type_name nginx_access
-  </store>
-  <store>
-    type stdout
   </store>
 </match>
 
@@ -19,12 +20,31 @@
     type elasticsearch
     host {{ fluentd_elasticsearch_host }}
     port 9200
+    {% if environment_tier in ['production', 'staging'] %}
+    user {{ elasticsearch_user }}
+    password {{ elasticsearch_password }}
+    {% endif %}
     index_name {{ project }}
     type_name nginx_error
   </store>
 </match>
 {% endif %}
 
+<match reformed.elasticsearch.php.error>
+  type copy
+  <store>
+    type elasticsearch
+    host {{ fluentd_elasticsearch_host }}
+    port 9200
+    {% if environment_tier in ['production', 'staging'] %}
+    user {{ elasticsearch_user }}
+    password {{ elasticsearch_password }}
+    {% endif %}
+    index_name {{ project }}
+    type_name php_error
+  </store>
+</match>
+{% endif %}
 
 
 {% if 'influxdb' in fluentd_plugins %}
