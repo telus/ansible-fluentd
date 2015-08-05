@@ -28,7 +28,6 @@
     type_name nginx_error
   </store>
 </match>
-{% endif %}
 
 <match reformed.elasticsearch.php.error>
   type copy
