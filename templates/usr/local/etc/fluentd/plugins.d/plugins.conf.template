@@ -5,10 +5,10 @@
     type elasticsearch
     host {{ fluentd_elasticsearch_host }}
     port 9200
-    {{ if environment_tier in ['production', 'staging'] }}
+    {% if environment_tier in ['production', 'staging'] %}
     user {{ elasticsearch_user }}
     password {{ elasticsearch_password }}
-    {{ endif }}
+    {% endif %}
     index_name {{ project }}
     type_name nginx_access
   </store>
@@ -20,10 +20,10 @@
     type elasticsearch
     host {{ fluentd_elasticsearch_host }}
     port 9200
-    {{ if environment_tier in ['production', 'staging'] }}
+    {% if environment_tier in ['production', 'staging'] %}
     user {{ elasticsearch_user }}
     password {{ elasticsearch_password }}
-    {{ endif }}
+    {% endif %}
     index_name {{ project }}
     type_name nginx_error
   </store>
