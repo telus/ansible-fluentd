@@ -15,4 +15,6 @@ fluentd_sources: []
 
 fluentd_plugins: []
 fluentd_elasticsearch_host: "logs.data-{{ environment_tier }}.{{ domain }}"
+fluentd_elasticsearch_user: "{{ mandatory }}"
+fluentd_elasticsearch_password: "{{ mandatory }}"
 fluentd_influxdb_host: "metrics.data-{{ environment_tier }}.{{ domain }}"

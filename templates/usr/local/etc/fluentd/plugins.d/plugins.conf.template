@@ -6,8 +6,8 @@
     host {{ fluentd_elasticsearch_host }}
     port 9200
     {% if environment_tier in ['production', 'staging'] %}
-    user {{ elasticsearch_user }}
-    password {{ elasticsearch_password }}
+    user {{ fluentd_elasticsearch_user }}
+    password {{ fluentd_elasticsearch_password }}
     {% endif %}
     index_name {{ project }}
     type_name nginx_access
@@ -21,8 +21,8 @@
     host {{ fluentd_elasticsearch_host }}
     port 9200
     {% if environment_tier in ['production', 'staging'] %}
-    user {{ elasticsearch_user }}
-    password {{ elasticsearch_password }}
+    user {{ fluentd_elasticsearch_user }}
+    password {{ fluentd_elasticsearch_password }}
     {% endif %}
     index_name {{ project }}
     type_name nginx_error
@@ -36,8 +36,8 @@
     host {{ fluentd_elasticsearch_host }}
     port 9200
     {% if environment_tier in ['production', 'staging'] %}
-    user {{ elasticsearch_user }}
-    password {{ elasticsearch_password }}
+    user {{ fluentd_elasticsearch_user }}
+    password {{ fluentd_elasticsearch_password }}
     {% endif %}
     index_name {{ project }}
     type_name php_error
@@ -51,8 +51,8 @@
     host {{ fluentd_elasticsearch_host }}
     port 9200
     {% if environment_tier in ['production', 'staging'] %}
-    user {{ elasticsearch_user }}
-    password {{ elasticsearch_password }}
+    user {{ fluentd_elasticsearch_user }}
+    password {{ fluentd_elasticsearch_password }}
     {% endif %}
     index_name {{ project }}
     type_name php_service
