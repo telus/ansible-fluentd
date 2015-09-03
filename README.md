@@ -5,15 +5,19 @@
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 
 ## Tunables
+--------
+- `fluentd_user` (string) - User to run nginx as.
+- `fluentd_group` (string) - Group to run nginx as.
 - `fluentd_runtime_root` (string) - Where Fluentd puts its PID files.
 - `fluentd_pidfile_path` (string) - Where Fluentd writes its PID file.
+- `fluentd_config_name` (string) - The name of the file fluentd will log to.
 - `fluentd_config_root` (string) - Where Fluentd finds its config files.
 - `fluentd_config_path` (string) - Where Fluentd finds its main config.
 - `fluentd_config_include_root` (string) - Where Fluentd finds granular config files.
 - `fluentd_posfile_path` (string) - Where Fluentd stores its position placeholder files.
 - `fluentd_posfile_path` (string) - Where Fluentd stores its position placeholder files.
-- `fluentd_sources` (array) - A list of sources (see example) for Fluentd to read from.
-- `fluentd_plugins` (array) - A list of required 'fluent-plugin-pluginname' gems.
+- `fluentd_sources` (list) - A list of sources (see example) for Fluentd to read from.
+- `fluentd_plugins` (list) - A list of required 'fluent-plugin-pluginname' gems.
 - `fluentd_elasticsearch_host` (string) - Where Fluentd sends data for Elasticsearch.
 - `fluentd_influxdb_host` (string) - Where Fluentd sends data for InfluxDB.
 
