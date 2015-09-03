@@ -44,6 +44,6 @@
     owner: "{{ fluentd_user }}"
     group: "{{ fluentd_group }}"
     mode: 0664
+  with_items: "{{ fluentd_plugins }}"
   when: fluentd_sources is iterable
   notify: Reload Service | fluentd
-  with_items: "{{ fluentd_plugins }}"
