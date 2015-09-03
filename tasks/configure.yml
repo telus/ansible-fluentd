@@ -34,7 +34,7 @@
     owner: "{{ fluentd_user }}"
     group: "{{ fluentd_group }}"
     mode: 0664
-  when: fluentd_sources is iterable
+  when: fluentd_sources
   notify: Reload Service | fluentd
 
 - name: "Upload Plugins | plugins config"
@@ -45,5 +45,5 @@
     group: "{{ fluentd_group }}"
     mode: 0664
   with_items: "{{ fluentd_plugins }}"
-  when: fluentd_sources is iterable
+  when: fluentd_sources
   notify: Reload Service | fluentd
