@@ -1,7 +1,7 @@
 ---
 fluentd_runtime_root: "{{ runtime_root | default('/var/run') }}/fluentd"
 fluentd_pidfile_path: "{{ fluentd_runtime_root }}/fluentd.pid"
-fluentd_config_name: "{{ mandatory }}"
+fluentd_config_name: "{{ project }}"
 fluentd_config_root: /usr/local/etc/fluentd
 fluentd_config_path: "{{ fluentd_config_root }}/fluentd.conf"
 fluentd_config_include_root: "{{ fluentd_config_root }}/conf.d"
@@ -15,6 +15,6 @@ fluentd_sources: []
 
 fluentd_plugins: []
 fluentd_elasticsearch_host: "logs.data-{{ environment_tier }}.{{ domain }}"
-fluentd_elasticsearch_user: "{{ mandatory }}"
+fluentd_elasticsearch_user: "{{ project }}"
 fluentd_elasticsearch_password: "{{ mandatory }}"
 fluentd_influxdb_host: "metrics.data-{{ environment_tier }}.{{ domain }}"
