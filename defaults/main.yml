@@ -1,7 +1,7 @@
 ---
 fluentd_runtime_root: "{{ runtime_root | default('/var/run') }}/fluentd"
 fluentd_pidfile_path: "{{ fluentd_runtime_root }}/fluentd.pid"
-fluentd_config_name: "{{ mandatory }}"
+fluentd_config_name: ""
 fluentd_config_root: /usr/local/etc/fluentd
 fluentd_config_path: "{{ fluentd_config_root }}/fluentd.conf"
 fluentd_config_include_root: "{{ fluentd_config_root }}/conf.d"
