@@ -10,11 +10,11 @@ galaxy_info:
   categories:
     - "monitoring"
 dependencies:
-  - role: telusdigital.ruby
+  - src: telusdigital.ruby
     ruby_gems:
       - fluentd
       - fluent-plugin-record-reformer
-  - role: telusdigital.upstart
+  - src: telusdigital.upstart
     upstart_name: fluentd
     upstart_description: fluentd
     upstart_exec_path: "/usr/local/bin/fluentd"
